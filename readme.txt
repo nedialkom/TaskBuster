@@ -1,7 +1,3 @@
-activate the environments by: 
+This is a project to practice Django.
 
-tb_dev\Scripts\activate
-
-OR
-
-tb_test\Scripts\activate
+Materials from http://www.marinamele.com/taskbuster-django-tutorial

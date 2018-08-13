@@ -5,3 +5,4 @@ tb_dev/
 tb_test/
 __pycache__/
 geckodriver.log
+environments.txt
