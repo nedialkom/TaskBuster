@@ -1,0 +1,7 @@
+db.sqlite3
+__pycache__
+secret_keys.py
+tb_dev/
+tb_test/
+__pycache__/
+geckodriver.log
