@@ -7,3 +7,5 @@ __pycache__/
 geckodriver.log
 environments.txt
 .gitignore
+.coverage
+htmlcov/
