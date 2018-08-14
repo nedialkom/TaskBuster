@@ -242,3 +242,47 @@ Docs management
 After editing .rst files execute::
 
     $ make html
+
+Postgres DB
+-----------
+
+Download from::
+
+    https://www.openscg.com/bigsql/postgresql/installers.jsp/
+
+Install
+
+Configure::
+
+    createdb -U postgres taskbuster_db
+    psql -U postgres
+    CREATE ROLE <your-user> WITH LOGIN PASSWORD '<your-password>';
+    GRANT ALL PRIVILEGES ON DATABASE taskbuster_db TO <your-user>;
+    ALTER USER <your-user> CREATEDB;
+
+Install package for Python in tb_dev and tb_test::
+
+    pip install psycopg2
+
+Add to requirements/base.txt file.
+
+Edit secret_keys.py by adding::
+
+    DATABASE_NAME='taskbuster_db'
+    DATABASE_USER='<your-user>'
+    DATABASE_PASSWORD='<your-password>'
+
+Edit taskbuster\settings\development.py and testing.py by adding::
+
+    import secret_keys
+
+    DATABASES = {
+      'default': {
+          'ENGINE': 'django.db.backends.postgresql_psycopg2',
+          'NAME': secret_keys.DATABASE_NAME,
+          'USER': secret_keys.DATABASE_USER,
+          'PASSWORD': secret_keys.DATABASE_PASSWORD,
+          'HOST': '',
+          'PORT': '',
+      }
+    }
