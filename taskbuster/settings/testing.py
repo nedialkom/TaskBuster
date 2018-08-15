@@ -15,3 +15,9 @@ DATABASES = {
         'PORT': '',
     }
 }
+
+FIXTURE_DIRS = [
+    os.path.join(BASE_DIR, 'fixtures'),
+    ]
+
+ALLOWED_HOSTS = ['127.0.0.1:8081']

@@ -14,17 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import include, url
+from django.urls import path, re_path
 from django.contrib import admin
 from django.conf.urls.i18n import i18n_patterns
 
-from .views import home, home_files
+from .views import home, home_files, logout_view
 
 urlpatterns = [
-    url(r'^(?P<filename>(robots.txt)|(humans.txt))$',
-        home_files, name='home-files'),
+    re_path(r'^(?P<filename>(robots.txt)|(humans.txt))$', home_files, name='home-files'),
+    re_path(r'^accounts/logout/$', logout_view),
+    path('accounts/', include('allauth.urls')),
+    #path('admin/', admin.site.urls),           # for django 2.1
 ]
 
 urlpatterns += i18n_patterns(
-    url(r'^$', home, name='home'),
-    url(r'^admin/', include(admin.site.urls)),
+    #path('', home, name='home'),
+    #url(r'^admin/', include(admin.site.urls)), # for django 1.8.5
+    #path('admin/', admin.site.urls),           # for django 2.1
+    re_path(r'^$', home, name='home'),
+    re_path(r'^admin/', admin.site.urls),
 )

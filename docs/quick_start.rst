@@ -286,3 +286,35 @@ Edit taskbuster\settings\development.py and testing.py by adding::
           'PORT': '',
       }
     }
+
+Google authentication
+---------------------
+
+Django administration site was not working, may be because of Django 1.8.5 version,
+so I migrated to Django 2.1.
+
+On top of this and the instructions on http://www.marinamele.com/user-authentication-with-google-using-django-allauth,
+it was nessesary to:
+
+1. to change django.core.urlresolvers with::
+
+    django.urls
+
+2. Change::
+
+    # Required by allauth template tags
+    "django.core.context_processors.request",
+
+With::
+
+    'django.template.context_processors.request',
+
+3. Replace::
+
+    $ python manage.py dumpdata --indent 2 --natural -e contenttypes -e auth.Permission > taskbuster/fixtures/allauth_fixture.json
+
+with::
+
+    python manage.py dumpdata --indent 2 --natural-primary -e contenttypes -e auth.Permission > taskbuster/fixtures/allauth_fixture.json
+
+4. Edit the taskbuster/fixtures/allauth_fixture.json file with Sublime text or othe software and save it as UTF-8 encoding

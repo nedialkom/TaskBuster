@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.utils.translation import activate
 from django.test import TestCase
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 class TestHomePage(TestCase):
 

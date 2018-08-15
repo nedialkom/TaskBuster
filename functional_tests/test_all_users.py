@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 from django.utils.translation import activate
 from selenium import webdriver
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from datetime import date
 from django.utils import formats
-
 
 class HomeNewVisitorTest(StaticLiveServerTestCase):
 

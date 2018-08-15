@@ -6,3 +6,7 @@ tb_test/
 __pycache__/
 .coverage
 htmlcov/
+initializr/
+taskbuster/fixtures
+chromedriver.exe
+functional_tests/geckodriver.log

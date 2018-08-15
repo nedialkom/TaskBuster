@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-14 13:16+0300\n"
+"POT-Creation-Date: 2018-08-15 10:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,26 +18,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\taskbuster\settings\base.py:114
+#: .\taskbuster\settings\base.py:116
 msgid "English"
 msgstr "Английски"
 
-#: .\taskbuster\settings\base.py:115
+#: .\taskbuster\settings\base.py:117
 msgid "Bulgarian"
 msgstr "Български"
 
-#: .\taskbuster\templates\taskbuster\index.html:10
+#: .\taskbuster\templates\taskbuster\index.html:12
 msgid "Welcome to TaskBuster!"
 msgstr "Добре дошли в TaskBuster!"
 
-#: .\taskbuster\templates\taskbuster\index.html:11
+#: .\taskbuster\templates\taskbuster\index.html:13
 msgid ""
 "TaskBuster is a simple Task manager that helps you organize your daylife. </"
 "br> You can create todo lists, periodic tasks and more! </br></br> If you "
 "want to learn how it was created, or create it yourself!, check www.django-"
 "tutorial.com"
 msgstr ""
-"TaskBuster е система за управление на задачи, полезна да организира ежедневието Ви "
-"</br> Можете да създавате списъци със задачи, периодични задачи и много други !</br></br> "
-"Ако искате да научите как е създадена, или да си направите собствена, проверете www.django-"
-"tutorial.com"
+"TaskBuster е система за управление на задачи, полезна да организира "
+"ежедневието Ви </br> Можете да създавате списъци със задачи, периодични "
+"задачи и много други !</br></br> Ако искате да научите как е създадена, или "
+"да си направите собствена, проверете www.django-tutorial.com"
