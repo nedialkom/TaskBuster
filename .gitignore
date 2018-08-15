@@ -10,3 +10,4 @@ initializr/
 taskbuster/fixtures
 chromedriver.exe
 functional_tests/geckodriver.log
+geckodriver.log

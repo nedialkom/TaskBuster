@@ -136,6 +136,7 @@ INSTALLED_APPS += (
     'allauth.socialaccount',
     # Login via Google
     'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.twitter',
 )
 
 SITE_ID = 1

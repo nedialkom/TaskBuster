@@ -315,6 +315,15 @@ With::
 
 with::
 
+    python manage.py dumpdata --indent 2 --natural-foreign -e contenttypes -e auth.Permission > taskbuster/fixtures/allauth_fixture.json
+
+If not working try::
+
     python manage.py dumpdata --indent 2 --natural-primary -e contenttypes -e auth.Permission > taskbuster/fixtures/allauth_fixture.json
 
 4. Edit the taskbuster/fixtures/allauth_fixture.json file with Sublime text or othe software and save it as UTF-8 encoding
+
+Twitter authentication
+----------------------
+
+Nothing special

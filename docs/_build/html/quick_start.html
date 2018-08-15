@@ -284,6 +284,52 @@ $ python manage.py compilemessages -l ca
 </pre></div>
 </div>
 </div>
+<div class="section" id="google-authentication">
+<h2>Google authentication<a class="headerlink" href="#google-authentication" title="Permalink to this headline">¶</a></h2>
+<p>Django administration site was not working, may be because of Django 1.8.5 version,
+so I migrated to Django 2.1.</p>
+<p>On top of this and the instructions on <a class="reference external" href="http://www.marinamele.com/user-authentication-with-google-using-django-allauth">http://www.marinamele.com/user-authentication-with-google-using-django-allauth</a>,
+it was nessesary to:</p>
+<ol class="arabic">
+<li><p class="first">to change django.core.urlresolvers with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">django</span><span class="o">.</span><span class="n">urls</span>
+</pre></div>
+</div>
+</li>
+<li><p class="first">Change:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Required by allauth template tags</span>
+<span class="s2">&quot;django.core.context_processors.request&quot;</span><span class="p">,</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>With:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;django.template.context_processors.request&#39;</span><span class="p">,</span>
+</pre></div>
+</div>
+<ol class="arabic" start="3">
+<li><p class="first">Replace:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python manage.py dumpdata --indent 2 --natural -e contenttypes -e auth.Permission &gt; taskbuster/fixtures/allauth_fixture.json
+</pre></div>
+</div>
+</li>
+</ol>
+<p>with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">dumpdata</span> <span class="o">--</span><span class="n">indent</span> <span class="mi">2</span> <span class="o">--</span><span class="n">natural</span><span class="o">-</span><span class="n">foreign</span> <span class="o">-</span><span class="n">e</span> <span class="n">contenttypes</span> <span class="o">-</span><span class="n">e</span> <span class="n">auth</span><span class="o">.</span><span class="n">Permission</span> <span class="o">&gt;</span> <span class="n">taskbuster</span><span class="o">/</span><span class="n">fixtures</span><span class="o">/</span><span class="n">allauth_fixture</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<p>If not working try:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">dumpdata</span> <span class="o">--</span><span class="n">indent</span> <span class="mi">2</span> <span class="o">--</span><span class="n">natural</span><span class="o">-</span><span class="n">primary</span> <span class="o">-</span><span class="n">e</span> <span class="n">contenttypes</span> <span class="o">-</span><span class="n">e</span> <span class="n">auth</span><span class="o">.</span><span class="n">Permission</span> <span class="o">&gt;</span> <span class="n">taskbuster</span><span class="o">/</span><span class="n">fixtures</span><span class="o">/</span><span class="n">allauth_fixture</span><span class="o">.</span><span class="n">json</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li>Edit the taskbuster/fixtures/allauth_fixture.json file with Sublime text or othe software and save it as UTF-8 encoding</li>
+</ol>
+</div>
+<div class="section" id="twitter-authentication">
+<h2>Twitter authentication<a class="headerlink" href="#twitter-authentication" title="Permalink to this headline">¶</a></h2>
+<p>Nothing special</p>
+</div>
 </div>
 
 
@@ -314,6 +360,8 @@ $ python manage.py compilemessages -l ca
 <li class="toctree-l2"><a class="reference internal" href="#useful-commands">Useful commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#docs-management">Docs management</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#postgres-db">Postgres DB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#google-authentication">Google authentication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#twitter-authentication">Twitter authentication</a></li>
 </ul>
 </li>
 </ul>
